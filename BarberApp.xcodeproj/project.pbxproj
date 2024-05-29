@@ -14,6 +14,10 @@
 		E7314F232BF7CC3E004E2E8F /* BarberAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7314F222BF7CC3E004E2E8F /* BarberAppTests.swift */; };
 		E7314F2D2BF7CC3E004E2E8F /* BarberAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7314F2C2BF7CC3E004E2E8F /* BarberAppUITests.swift */; };
 		E7314F2F2BF7CC3E004E2E8F /* BarberAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7314F2E2BF7CC3E004E2E8F /* BarberAppUITestsLaunchTests.swift */; };
+		E7D9732B2C05F34D00BBE2F2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732A2C05F34D00BBE2F2 /* MainView.swift */; };
+		E7D9732D2C05F58900BBE2F2 /* BarberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732C2C05F58900BBE2F2 /* BarberView.swift */; };
+		E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732E2C05F75400BBE2F2 /* HomeView.swift */; };
+		E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D973302C05F76100BBE2F2 /* OrdersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		E7314F282BF7CC3E004E2E8F /* BarberAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarberAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7314F2C2BF7CC3E004E2E8F /* BarberAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppUITests.swift; sourceTree = "<group>"; };
 		E7314F2E2BF7CC3E004E2E8F /* BarberAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E7D9732A2C05F34D00BBE2F2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E7D9732C2C05F58900BBE2F2 /* BarberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberView.swift; sourceTree = "<group>"; };
+		E7D9732E2C05F75400BBE2F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E7D973302C05F76100BBE2F2 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,10 @@
 			children = (
 				E7314F112BF7CC3C004E2E8F /* BarberAppApp.swift */,
 				E7314F132BF7CC3C004E2E8F /* ContentView.swift */,
+				E7D9732A2C05F34D00BBE2F2 /* MainView.swift */,
+				E7D9732C2C05F58900BBE2F2 /* BarberView.swift */,
+				E7D9732E2C05F75400BBE2F2 /* HomeView.swift */,
+				E7D973302C05F76100BBE2F2 /* OrdersView.swift */,
 				E7314F152BF7CC3D004E2E8F /* Assets.xcassets */,
 				E7314F172BF7CC3D004E2E8F /* Preview Content */,
 			);
@@ -257,8 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D9732D2C05F58900BBE2F2 /* BarberView.swift in Sources */,
 				E7314F142BF7CC3C004E2E8F /* ContentView.swift in Sources */,
+				E7D9732B2C05F34D00BBE2F2 /* MainView.swift in Sources */,
+				E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */,
 				E7314F122BF7CC3C004E2E8F /* BarberAppApp.swift in Sources */,
+				E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

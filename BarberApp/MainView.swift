@@ -2,14 +2,30 @@
 //  MainView.swift
 //  BarberApp
 //
-//  Created by Vladimir Fursov on 28.05.2024.
+//  Created by Mironov Egor on 28.05.2024.
 //
 
 import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image("play.house.fill")
+                    Text("Главная")
+                        .foregroundColor(.accentColor)
+                }
+            OrdersView()
+                .tabItem {
+                    Image("rectangle.stack")
+                    Text("Записи")
+                        .foregroundColor(.accentColor)
+                }
+        }
+        .onAppear() {
+            UITabBar.appearance().backgroundColor = .black
+        }
     }
 }
 
