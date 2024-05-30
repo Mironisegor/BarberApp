@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = RegistrationGridViewModel()
     var body: some View {
         NavigationView {
             ZStack {
@@ -16,6 +17,7 @@ struct ContentView: View {
                 VStack {
                     Image(systemName: "scissors")
                         .font(.system(size:72, weight: .light))
+                        .colorInvert()
                     Text("barber")
                         .font(.system(size: 50, weight: .regular))
                         .foregroundColor(.white)
@@ -23,13 +25,16 @@ struct ContentView: View {
                 }
                 VStack {
                     NavigationLink(destination: MainView()) {
-                        Text("Продолжить как клиент")
-                            .font(.system(size: 18, weight: .semibold))
-                            .frame(width: 300, height: 50)
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
-                            .padding(.top, 500)
+                        HStack {
+                            Image(systemName: "person.fill")
+                            Text("Продолжить как клиент")
+                                .font(.system(size: 18, weight: .semibold))
+                        }
+                        .frame(width: 300, height: 50)
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .cornerRadius(10)
+                        .padding(.top, 500)
                     }
                     NavigationLink(destination: BarberView()) {
                         Text("Продолжить как барбер")
@@ -42,6 +47,7 @@ struct ContentView: View {
                     }
                 }
             }
+            
         }
     }
 }

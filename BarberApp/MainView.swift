@@ -8,27 +8,53 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selectedTabIndex = 0
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTabIndex) {
             HomeView()
                 .tabItem {
-                    Image("play.house.fill")
-                    Text("Главная")
-                        .foregroundColor(.accentColor)
+                    ExtractedView1(imageName: selectedTabIndex == 0 ? "play.house.fill": "play.house")
                 }
+                .tag(0) // Устанавливаем тег для первой вкладки
+            
             OrdersView()
                 .tabItem {
-                    Image("rectangle.stack")
-                    Text("Записи")
-                        .foregroundColor(.accentColor)
+                    ExtractedView2(imageName: selectedTabIndex == 1 ? "rectangle.stack.fill" : "rectangle.stack")
                 }
+                .tag(1) // Устанавливаем тег для второй вкладки
         }
-        .onAppear() {
-            UITabBar.appearance().backgroundColor = .black
-        }
+        .tint(.accentColor)
+        .onAppear(perform: {
+                    //2
+                    UITabBar.appearance().unselectedItemTintColor = .white
+                    //3
+                    UITabBarItem.appearance().badgeColor = .white
+                    //4
+                    UITabBar.appearance().backgroundColor = UIColor(Color("color1")).withAlphaComponent(1)
+                    //5
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+                })
     }
 }
 
+
 #Preview {
     MainView()
+}
+
+struct ExtractedView1: View {
+    var imageName = ""
+    var body: some View {
+        Image(imageName)
+        Text("Главная")
+    }
+}
+
+struct ExtractedView2: View {
+    var imageName = ""
+    var body: some View {
+        Image(imageName)
+        Text("Записи")
+    }
 }
