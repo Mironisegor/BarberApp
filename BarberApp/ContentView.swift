@@ -17,14 +17,14 @@ struct ContentView: View {
                 VStack {
                     Image(systemName: "scissors")
                         .font(.system(size:72, weight: .light))
-                        .colorInvert()
+                        .foregroundColor(.white)
                     Text("barber")
                         .font(.system(size: 50, weight: .regular))
                         .foregroundColor(.white)
                         .padding(.bottom, 50)
                 }
                 VStack {
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: RegistrationView()) {
                         HStack {
                             Image(systemName: "person.fill")
                             Text("Продолжить как клиент")

@@ -26,7 +26,6 @@ struct MainView: View {
         }
         .tint(.accentColor)
         .onAppear(perform: {
-                    //2
                     UITabBar.appearance().unselectedItemTintColor = .white
                     //3
                     UITabBarItem.appearance().badgeColor = .white
