@@ -11,7 +11,6 @@ struct HomeView: View {
     @State private var date = Date.now
     @State private var fio = ""
     @State private var number = ""
-    @StateObject var viewModel = RegistrationGridViewModel()
     
     var body: some View {
         ZStack {
@@ -62,7 +61,7 @@ struct HomeView: View {
                         .padding(.bottom, 50)
                 }
             }
-            .padding(.top, 10)
+            .padding(.top, 30)
         }
     }
 }

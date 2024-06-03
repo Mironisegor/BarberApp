@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = RegistrationGridViewModel()
     var body: some View {
         NavigationView {
             ZStack {
@@ -24,7 +23,7 @@ struct ContentView: View {
                         .padding(.bottom, 50)
                 }
                 VStack {
-                    NavigationLink(destination: RegistrationView()) {
+                    NavigationLink(destination: LoginView()) {
                         HStack {
                             Image(systemName: "person.fill")
                             Text("Продолжить как клиент")

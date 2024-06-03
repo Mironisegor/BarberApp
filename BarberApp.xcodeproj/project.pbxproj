@@ -18,9 +18,11 @@
 		E7D9732D2C05F58900BBE2F2 /* BarberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732C2C05F58900BBE2F2 /* BarberView.swift */; };
 		E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732E2C05F75400BBE2F2 /* HomeView.swift */; };
 		E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D973302C05F76100BBE2F2 /* OrdersView.swift */; };
-		F7025FC02C0CE3B7006B1062 /* RegistartionView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7025FBF2C0CE3B7006B1062 /* RegistartionView2.swift */; };
-		F7BAE4262C0868BA001756B3 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAE4252C0868BA001756B3 /* RegistrationViewModel.swift */; };
-		F7BAE4282C08696C001756B3 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAE4272C08696C001756B3 /* RegistrationView.swift */; };
+		F709094B2C0E08AD007D265C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709094A2C0E08AD007D265C /* LoginView.swift */; };
+		F709094D2C0E091D007D265C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709094C2C0E091D007D265C /* RegistrationView.swift */; };
+		F709094F2C0E1FA3007D265C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709094E2C0E1FA3007D265C /* AccountView.swift */; };
+		F70909512C0E2256007D265C /* Barber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70909502C0E2256007D265C /* Barber.swift */; };
+		F70909532C0E2454007D265C /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70909522C0E2454007D265C /* OrderListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,11 @@
 		E7D9732C2C05F58900BBE2F2 /* BarberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberView.swift; sourceTree = "<group>"; };
 		E7D9732E2C05F75400BBE2F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E7D973302C05F76100BBE2F2 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
-		F7025FBF2C0CE3B7006B1062 /* RegistartionView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistartionView2.swift; sourceTree = "<group>"; };
-		F7BAE4252C0868BA001756B3 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		F7BAE4272C08696C001756B3 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F709094A2C0E08AD007D265C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F709094C2C0E091D007D265C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		F709094E2C0E1FA3007D265C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		F70909502C0E2256007D265C /* Barber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barber.swift; sourceTree = "<group>"; };
+		F70909522C0E2454007D265C /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +120,11 @@
 				E7D973302C05F76100BBE2F2 /* OrdersView.swift */,
 				E7314F152BF7CC3D004E2E8F /* Assets.xcassets */,
 				E7314F172BF7CC3D004E2E8F /* Preview Content */,
-				F7BAE4252C0868BA001756B3 /* RegistrationViewModel.swift */,
-				F7BAE4272C08696C001756B3 /* RegistrationView.swift */,
-				F7025FBF2C0CE3B7006B1062 /* RegistartionView2.swift */,
+				F709094A2C0E08AD007D265C /* LoginView.swift */,
+				F709094C2C0E091D007D265C /* RegistrationView.swift */,
+				F709094E2C0E1FA3007D265C /* AccountView.swift */,
+				F70909502C0E2256007D265C /* Barber.swift */,
+				F70909522C0E2454007D265C /* OrderListCell.swift */,
 			);
 			path = BarberApp;
 			sourceTree = "<group>";
@@ -279,14 +285,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D9732D2C05F58900BBE2F2 /* BarberView.swift in Sources */,
+				F70909532C0E2454007D265C /* OrderListCell.swift in Sources */,
 				E7314F142BF7CC3C004E2E8F /* ContentView.swift in Sources */,
 				E7D9732B2C05F34D00BBE2F2 /* MainView.swift in Sources */,
-				F7BAE4262C0868BA001756B3 /* RegistrationViewModel.swift in Sources */,
+				F709094D2C0E091D007D265C /* RegistrationView.swift in Sources */,
 				E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */,
-				F7025FC02C0CE3B7006B1062 /* RegistartionView2.swift in Sources */,
 				E7314F122BF7CC3C004E2E8F /* BarberAppApp.swift in Sources */,
+				F709094F2C0E1FA3007D265C /* AccountView.swift in Sources */,
 				E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */,
-				F7BAE4282C08696C001756B3 /* RegistrationView.swift in Sources */,
+				F709094B2C0E08AD007D265C /* LoginView.swift in Sources */,
+				F70909512C0E2256007D265C /* Barber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

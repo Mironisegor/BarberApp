@@ -10,50 +10,60 @@ import SwiftUI
 struct MainView: View {
     @State private var selectedTabIndex = 0
     
+    let icons = [
+        "play.house",
+        "rectangle.stack",
+        "person"
+    ]
+    let namedForIcons = [
+        "Главная",
+        "Записи",
+        "Аккаунт"
+    ]
+    
     var body: some View {
-        TabView(selection: $selectedTabIndex) {
-            HomeView()
-                .tabItem {
-                    ExtractedView1(imageName: selectedTabIndex == 0 ? "play.house.fill": "play.house")
+        ZStack {
+            Color.accentColor
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                ZStack {
+                    switch selectedTabIndex {
+                    case 0:
+                        HomeView()
+                    case 1:
+                        OrdersView()
+                    default:
+                        AccountView()
+                    }
                 }
-                .tag(0) // Устанавливаем тег для первой вкладки
-            
-            OrdersView()
-                .tabItem {
-                    ExtractedView2(imageName: selectedTabIndex == 1 ? "rectangle.stack.fill" : "rectangle.stack")
+                Spacer()
+                HStack(spacing: 70) {
+                    ForEach(0..<3, id: \.self, content: {number in
+                        Button(action: {
+                            self.selectedTabIndex = number
+                        }, label: {
+                            VStack(spacing: 1) {
+                                Image(selectedTabIndex == number ? icons[number] + ".fill" : icons[number])
+                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 35, height: 35)
+                                    .foregroundColor(.white)
+                                Text(namedForIcons[number])
+                                    .font(.system(size: 13, weight: .regular))
+                                    .foregroundColor(.white)
+                            }
+                        })
+                    })
                 }
-                .tag(1) // Устанавливаем тег для второй вкладки
+                .frame(width: 420, height: 40)
+                .padding(.top, 10)
+                .background(Color("color1"))
+            }
         }
-        .tint(.accentColor)
-        .onAppear(perform: {
-                    UITabBar.appearance().unselectedItemTintColor = .white
-                    //3
-                    UITabBarItem.appearance().badgeColor = .white
-                    //4
-                    UITabBar.appearance().backgroundColor = UIColor(Color("color1")).withAlphaComponent(1)
-                    //5
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-                })
     }
 }
 
 
 #Preview {
     MainView()
-}
-
-struct ExtractedView1: View {
-    var imageName = ""
-    var body: some View {
-        Image(imageName)
-        Text("Главная")
-    }
-}
-
-struct ExtractedView2: View {
-    var imageName = ""
-    var body: some View {
-        Image(imageName)
-        Text("Записи")
-    }
 }

@@ -9,41 +9,15 @@ import SwiftUI
 
 struct OrdersView: View {
     var body: some View {
-        ZStack {
-            Color.accentColor
-                .edgesIgnoringSafeArea(.all)
-            Text("Ваши записи")
-                .font(.system(size: 30, weight: .semibold))
-                .foregroundColor(.white)
-                .padding(.bottom, 700)
-            VStack {
-                HStack {
-                    VStack {
-                        Text("Дата")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(.black)
-                        Text("Время")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(.black)
-                    }
-                    .padding(.horizontal, 15)
-                    Spacer()
-                    VStack {
-                        Text("28.04.24")
-                            .font(.system(size: 17, weight: .regular))
-                            .foregroundColor(.black)
-                        Text("17:30")
-                            .font(.system(size: 17, weight: .regular))
-                            .foregroundColor(.black)
-                    }
-                    .padding(.horizontal, 15)
+        NavigationView {
+            ZStack {
+                Color.blue.edgesIgnoringSafeArea(.all)
+                
+                List(MockData.orderItems) { order in
+                    OrderListCell(order: order)
                 }
-                .frame(width: 350, height: 60)
-                .background(Color.white)
-                .cornerRadius(10)
-                .padding()
+                .navigationTitle("Ваши Записи")
             }
-            .padding(.bottom, 550)
         }
     }
 }
@@ -51,3 +25,4 @@ struct OrdersView: View {
 #Preview {
     OrdersView()
 }
+
