@@ -37,7 +37,7 @@ struct MainView: View {
                     }
                 }
                 Spacer()
-                HStack(spacing: 70) {
+                HStack(spacing: 85) {
                     ForEach(0..<3, id: \.self, content: {number in
                         Button(action: {
                             self.selectedTabIndex = number
@@ -55,9 +55,10 @@ struct MainView: View {
                         })
                     })
                 }
-                .frame(width: 420, height: 40)
+                .frame(width: 420, height: 50)
                 .padding(.top, 10)
-                .background(Color("color1"))
+                .background(Color.gray)
+                
             }
         }
     }

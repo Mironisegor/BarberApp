@@ -1,10 +1,3 @@
-//
-//  RegistrationView.swift
-//  BarberApp
-//
-//  Created by Gleb  on 30.05.2024.
-//
-
 import SwiftUI
 
 struct LoginView: View {
@@ -12,6 +5,7 @@ struct LoginView: View {
     @State var password = ""
     @State var isShowingMainView = false
     @State var isShowingRegistrationView = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -19,32 +13,38 @@ struct LoginView: View {
                     .font(.system(size: 30, weight: .medium))
                     .foregroundColor(.white)
                     .padding(.top, 10)
+                
                 Form {
-                    Section(header: Text("E-mail")){
-                            TextField("Введите email", text: $email)
+                    Section(header: Text("E-mail")) {
+                        TextField("Введите email", text: $email)
+                            .foregroundColor(.black)
                     }
                     .foregroundColor(.white)
+                    
                     Section(header: Text("Пароль")
-                        .foregroundColor(.white)){
-                            SecureField("Введите пароль", text: $password)
+                        .foregroundColor(.white)) {
+                        SecureField("Введите пароль", text: $password)
+                            .foregroundColor(.black)
                     }
                 }
                 .scrollContentBackground(.hidden)
                 .padding(.top, 20)
-                Button{
+                
+                Button {
                     isShowingMainView.toggle()
                 } label: {
-                        Text("Войти")
-                            .font(.system(size: 22, weight: .medium))
-                            .frame(width: 200, height: 50)
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .cornerRadius(20)
-                            .padding(.bottom, 30)
+                    Text("Войти")
+                        .font(.system(size: 22, weight: .medium))
+                        .frame(width: 200, height: 50)
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .cornerRadius(20)
+                        .padding(.bottom, 30)
                 }
+                
                 Button {
                     isShowingRegistrationView.toggle()
-                }label : {
+                } label: {
                     HStack {
                         Text("Еще нет аккаунта?")
                             .font(.system(size: 18, weight: .regular))
@@ -58,9 +58,12 @@ struct LoginView: View {
             }
             .background(Color.accentColor)
         }
-        .fullScreenCover(isPresented: $isShowingMainView, content: {
+        .fullScreenCover(isPresented: $isShowingMainView) {
             MainView()
-        })
+        }
+        .fullScreenCover(isPresented: $isShowingRegistrationView) {
+            RegistartionView()
+        }
     }
 }
 

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CDA4B872CA6A5E100C2EECE /* BarberShopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA4B862CA6A5D200C2EECE /* BarberShopsView.swift */; };
+		2CDA4B892CA6A82F00C2EECE /* BarberShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA4B882CA6A82500C2EECE /* BarberShopListCell.swift */; };
+		2CDA4B8B2CA6AF8B00C2EECE /* BarbersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA4B8A2CA6AF7F00C2EECE /* BarbersListCell.swift */; };
+		2CDA4B8D2CA6AF9F00C2EECE /* BarbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA4B8C2CA6AF9100C2EECE /* BarbersView.swift */; };
+		2CDA4B902CA6BB1B00C2EECE /* ServicesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA4B8F2CA6BB0D00C2EECE /* ServicesListCell.swift */; };
+		2CDA4B922CA6BB2900C2EECE /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA4B912CA6BB2200C2EECE /* ServicesView.swift */; };
 		E7314F122BF7CC3C004E2E8F /* BarberAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7314F112BF7CC3C004E2E8F /* BarberAppApp.swift */; };
 		E7314F142BF7CC3C004E2E8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7314F132BF7CC3C004E2E8F /* ContentView.swift */; };
 		E7314F162BF7CC3D004E2E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7314F152BF7CC3D004E2E8F /* Assets.xcassets */; };
@@ -43,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CDA4B862CA6A5D200C2EECE /* BarberShopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberShopsView.swift; sourceTree = "<group>"; };
+		2CDA4B882CA6A82500C2EECE /* BarberShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberShopListCell.swift; sourceTree = "<group>"; };
+		2CDA4B8A2CA6AF7F00C2EECE /* BarbersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbersListCell.swift; sourceTree = "<group>"; };
+		2CDA4B8C2CA6AF9100C2EECE /* BarbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbersView.swift; sourceTree = "<group>"; };
+		2CDA4B8F2CA6BB0D00C2EECE /* ServicesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesListCell.swift; sourceTree = "<group>"; };
+		2CDA4B912CA6BB2200C2EECE /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
 		E7314F0E2BF7CC3C004E2E8F /* BarberApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7314F112BF7CC3C004E2E8F /* BarberAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppApp.swift; sourceTree = "<group>"; };
 		E7314F132BF7CC3C004E2E8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CDA4B8E2CA6BAEB00C2EECE /* SheetViews */ = {
+			isa = PBXGroup;
+			children = (
+				2CDA4B912CA6BB2200C2EECE /* ServicesView.swift */,
+				2CDA4B8F2CA6BB0D00C2EECE /* ServicesListCell.swift */,
+				2CDA4B8A2CA6AF7F00C2EECE /* BarbersListCell.swift */,
+				2CDA4B8C2CA6AF9100C2EECE /* BarbersView.swift */,
+				2CDA4B882CA6A82500C2EECE /* BarberShopListCell.swift */,
+				2CDA4B862CA6A5D200C2EECE /* BarberShopsView.swift */,
+				F70909522C0E2454007D265C /* OrderListCell.swift */,
+				E7D973302C05F76100BBE2F2 /* OrdersView.swift */,
+			);
+			path = SheetViews;
+			sourceTree = "<group>";
+		};
 		E7314F052BF7CC3C004E2E8F = {
 			isa = PBXGroup;
 			children = (
@@ -112,19 +139,18 @@
 		E7314F102BF7CC3C004E2E8F /* BarberApp */ = {
 			isa = PBXGroup;
 			children = (
+				2CDA4B8E2CA6BAEB00C2EECE /* SheetViews */,
 				E7314F112BF7CC3C004E2E8F /* BarberAppApp.swift */,
 				E7314F132BF7CC3C004E2E8F /* ContentView.swift */,
 				E7D9732A2C05F34D00BBE2F2 /* MainView.swift */,
 				E7D9732C2C05F58900BBE2F2 /* BarberView.swift */,
 				E7D9732E2C05F75400BBE2F2 /* HomeView.swift */,
-				E7D973302C05F76100BBE2F2 /* OrdersView.swift */,
 				E7314F152BF7CC3D004E2E8F /* Assets.xcassets */,
 				E7314F172BF7CC3D004E2E8F /* Preview Content */,
 				F709094A2C0E08AD007D265C /* LoginView.swift */,
 				F709094C2C0E091D007D265C /* RegistrationView.swift */,
 				F709094E2C0E1FA3007D265C /* AccountView.swift */,
 				F70909502C0E2256007D265C /* Barber.swift */,
-				F70909522C0E2454007D265C /* OrderListCell.swift */,
 			);
 			path = BarberApp;
 			sourceTree = "<group>";
@@ -284,16 +310,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDA4B892CA6A82F00C2EECE /* BarberShopListCell.swift in Sources */,
+				2CDA4B902CA6BB1B00C2EECE /* ServicesListCell.swift in Sources */,
 				E7D9732D2C05F58900BBE2F2 /* BarberView.swift in Sources */,
 				F70909532C0E2454007D265C /* OrderListCell.swift in Sources */,
 				E7314F142BF7CC3C004E2E8F /* ContentView.swift in Sources */,
 				E7D9732B2C05F34D00BBE2F2 /* MainView.swift in Sources */,
+				2CDA4B8B2CA6AF8B00C2EECE /* BarbersListCell.swift in Sources */,
 				F709094D2C0E091D007D265C /* RegistrationView.swift in Sources */,
+				2CDA4B8D2CA6AF9F00C2EECE /* BarbersView.swift in Sources */,
+				2CDA4B922CA6BB2900C2EECE /* ServicesView.swift in Sources */,
 				E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */,
 				E7314F122BF7CC3C004E2E8F /* BarberAppApp.swift in Sources */,
 				F709094F2C0E1FA3007D265C /* AccountView.swift in Sources */,
 				E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */,
 				F709094B2C0E08AD007D265C /* LoginView.swift in Sources */,
+				2CDA4B872CA6A5E100C2EECE /* BarberShopsView.swift in Sources */,
 				F70909512C0E2256007D265C /* Barber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
