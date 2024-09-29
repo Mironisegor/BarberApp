@@ -79,7 +79,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingServices) {
-                            ServicesView(selectedService: $selectedService)
+                            ServicesView()
                         }
                     }
                     

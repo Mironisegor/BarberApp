@@ -1,35 +1,45 @@
 import SwiftUI
 
 struct ServicesView: View {
-    @Binding var selectedService: Service?
-    @State private var selectedServices: [Service: Bool] = [:]
+    @Environment(\.presentationMode) var presentationMode
+    @State var selectedService: Bool = false
     
     var body: some View {
-        ZStack {
-            Color.gray.edgesIgnoringSafeArea(.all)
-            
-            ScrollView {
-                VStack(spacing: 10) {
-                    ForEach(MockData.services) { service in
-                        ServicesListCell(service: service, isSelected: Binding(
-                            get: { selectedServices[service] ?? false },
-                            set: { newValue in
-                                selectedServices[service] = newValue
-                                if newValue {
-                                    selectedService = service
-                                } else {
-                                    selectedService = nil
-                                }
-                            }
-                        ))
+        NavigationView {
+            ZStack {
+                Color.gray.edgesIgnoringSafeArea(.all)
+                
+                ScrollView {
+                    VStack(spacing: 10) {
+                        ForEach(MockData.services) { service in
+                            ServicesListCell(service: service, isSelected: $selectedService)
+                        }
+                    }
+                }
+                .background(Color.gray)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Услуги")
+                            .font(.system(size: 35, weight: .semibold))
+                            .foregroundColor(Color.white)
+                            .padding(.top, 10)
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(.white)
+                        }
                     }
                 }
             }
-            .background(Color.gray)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    ServicesView(selectedService: .constant(nil))
+    ServicesView()
 }

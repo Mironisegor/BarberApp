@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ServicesListCell: View {
-    let service: Service
+    var service: Service
     @Binding var isSelected: Bool
     
     var body: some View {
