@@ -3,6 +3,8 @@ import SwiftUI
 struct OrdersView: View {
     let customGrayColor = Color(red: 0.24, green: 0.24, blue: 0.24)
     
+    @EnvironmentObject var order: Order
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -10,11 +12,14 @@ struct OrdersView: View {
                 
                 ScrollView {
                     VStack(spacing: 0) {
-                        ForEach(MockData.orders) { order in
+                        ForEach(order.items) { order in
                             OrderListCell(order: order)
                                 .background(customGrayColor)
                                 .padding(.vertical, 8)
                         }
+                    }
+                    if (order.items.isEmpty) {
+                        Text("No orders yet")
                     }
                 }
                 .background(customGrayColor)
@@ -32,5 +37,10 @@ struct OrdersView: View {
 }
 
 #Preview {
-    OrdersView()
+    let order = Order()
+    order.items = [
+        MockData.sampleOrderOne
+    ]
+    return OrdersView()
+        .environmentObject(order)
 }

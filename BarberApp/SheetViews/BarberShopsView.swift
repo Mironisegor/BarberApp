@@ -2,7 +2,9 @@ import SwiftUI
 
 struct BarberShopsView: View {
     let customGrayColor = Color(red: 0.24, green: 0.24, blue: 0.24)
-    @Binding var isPresented : Bool
+    @Binding var isPresented: Bool
+    @Binding var selectedBarberShop: BarberShop?
+    @State private var selectedBarberShopIndex: Int? = nil
     
     var body: some View {
         NavigationView {
@@ -11,8 +13,19 @@ struct BarberShopsView: View {
                 
                 ScrollView {
                     VStack(spacing: 0) {
-                        ForEach(MockData.barberShops) { shop in
-                            BarberShopListCell(shop: shop, isSelected: $isPresented)
+                        ForEach(Array(MockData.barberShops.enumerated()), id: \.element.id) { index, barberShop in
+                            BarberShopListCell(shop: barberShop, isSelected: Binding(
+                                get: { selectedBarberShopIndex == index },
+                                set: { newValue in
+                                    if newValue {
+                                        selectedBarberShopIndex = index
+                                        selectedBarberShop = barberShop
+                                    } else {
+                                        selectedBarberShopIndex = nil
+                                        selectedBarberShop = nil
+                                    }
+                                }
+                            ))
                             .background(customGrayColor)
                             .padding(.vertical, 8)
                         }
@@ -43,5 +56,5 @@ struct BarberShopsView: View {
 }
 
 #Preview {
-    BarberShopsView(isPresented: .constant(true))
+    BarberShopsView(isPresented: .constant(true), selectedBarberShop: .constant(nil))
 }

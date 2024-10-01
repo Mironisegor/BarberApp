@@ -24,6 +24,7 @@
 		E7D9732D2C05F58900BBE2F2 /* BarberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732C2C05F58900BBE2F2 /* BarberView.swift */; };
 		E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9732E2C05F75400BBE2F2 /* HomeView.swift */; };
 		E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D973302C05F76100BBE2F2 /* OrdersView.swift */; };
+		E7FC64792CAC4EA500FCC7A1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC64782CAC4EA500FCC7A1 /* Order.swift */; };
 		F709094B2C0E08AD007D265C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709094A2C0E08AD007D265C /* LoginView.swift */; };
 		F709094D2C0E091D007D265C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709094C2C0E091D007D265C /* RegistrationView.swift */; };
 		F709094F2C0E1FA3007D265C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709094E2C0E1FA3007D265C /* AccountView.swift */; };
@@ -69,6 +70,7 @@
 		E7D9732C2C05F58900BBE2F2 /* BarberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberView.swift; sourceTree = "<group>"; };
 		E7D9732E2C05F75400BBE2F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E7D973302C05F76100BBE2F2 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		E7FC64782CAC4EA500FCC7A1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F709094A2C0E08AD007D265C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F709094C2C0E091D007D265C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		F709094E2C0E1FA3007D265C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 				2CDA4B882CA6A82500C2EECE /* BarberShopListCell.swift */,
 				2CDA4B862CA6A5D200C2EECE /* BarberShopsView.swift */,
 				F70909522C0E2454007D265C /* OrderListCell.swift */,
-				E7D973302C05F76100BBE2F2 /* OrdersView.swift */,
 			);
 			path = SheetViews;
 			sourceTree = "<group>";
@@ -142,10 +143,12 @@
 				E7FC64762CAC48FD00FCC7A1 /* TabViews */,
 				2CDA4B8E2CA6BAEB00C2EECE /* SheetViews */,
 				E7314F112BF7CC3C004E2E8F /* BarberAppApp.swift */,
+				E7D9732C2C05F58900BBE2F2 /* BarberView.swift */,
 				E7314F132BF7CC3C004E2E8F /* GreetingView.swift */,
 				E7D9732A2C05F34D00BBE2F2 /* MainView.swift */,
 				F709094A2C0E08AD007D265C /* LoginView.swift */,
 				F709094C2C0E091D007D265C /* RegistrationView.swift */,
+				E7FC64782CAC4EA500FCC7A1 /* Order.swift */,
 				F70909502C0E2256007D265C /* Barber.swift */,
 				E7314F152BF7CC3D004E2E8F /* Assets.xcassets */,
 				E7314F172BF7CC3D004E2E8F /* Preview Content */,
@@ -181,9 +184,9 @@
 		E7FC64762CAC48FD00FCC7A1 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
+				E7D973302C05F76100BBE2F2 /* OrdersView.swift */,
 				F709094E2C0E1FA3007D265C /* AccountView.swift */,
 				E7D9732E2C05F75400BBE2F2 /* HomeView.swift */,
-				E7D9732C2C05F58900BBE2F2 /* BarberView.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				2CDA4B922CA6BB2900C2EECE /* ServicesView.swift in Sources */,
 				E7D9732F2C05F75400BBE2F2 /* HomeView.swift in Sources */,
 				E7314F122BF7CC3C004E2E8F /* BarberAppApp.swift in Sources */,
+				E7FC64792CAC4EA500FCC7A1 /* Order.swift in Sources */,
 				F709094F2C0E1FA3007D265C /* AccountView.swift in Sources */,
 				E7D973312C05F76100BBE2F2 /* OrdersView.swift in Sources */,
 				F709094B2C0E08AD007D265C /* LoginView.swift in Sources */,

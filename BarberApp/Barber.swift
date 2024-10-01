@@ -30,7 +30,7 @@ struct Service: Decodable, Identifiable, Hashable {
     let type: String
 }
 
-struct Order: Decodable, Identifiable, Hashable {
+struct OrderItem: Decodable, Identifiable, Hashable {
     let id: Int
     let service: Service
     let barber: Barber
@@ -63,9 +63,9 @@ struct MockData {
     static let services = [sampleServiceOne, sampleServiceTwo, sampleServiceThree, sampleServiceFour, sampleServiceFive, sampleServiceSix]
     
     
-    static let sampleOrderOne = Order(id: 1, service: sampleServiceOne, barber: sampleBarberOne, barberShop: sampleBarberShopOne, data: "30.08.2024", time: "19:30")
-    static let sampleOrderTwo = Order(id: 2, service: sampleServiceTwo, barber: sampleBarberTwo, barberShop: sampleBarberShopTwo, data: "10.04.2024", time: "13:23")
-    static let sampleOrderThree = Order(id: 3, service: sampleServiceThree, barber: sampleBarberThree, barberShop: sampleBarberShopThree, data: "30.08.2024", time: "19:30")
+    static let sampleOrderOne = OrderItem(id: 1, service: sampleServiceOne, barber: sampleBarberOne, barberShop: sampleBarberShopOne, data: "30.08.2024", time: "19:30")
+    static let sampleOrderTwo = OrderItem(id: 2, service: sampleServiceTwo, barber: sampleBarberTwo, barberShop: sampleBarberShopTwo, data: "10.04.2024", time: "13:23")
+    static let sampleOrderThree = OrderItem(id: 3, service: sampleServiceThree, barber: sampleBarberThree, barberShop: sampleBarberShopThree, data: "30.08.2024", time: "19:30")
     
     static var orders = [sampleOrderOne, sampleOrderTwo, sampleOrderThree]
 }

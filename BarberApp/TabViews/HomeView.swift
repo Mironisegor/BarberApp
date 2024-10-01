@@ -5,6 +5,10 @@ struct HomeView: View {
     @State private var isShowingBarbershops = false
     @State private var isShowingBarbers = false
     @State private var isShowingServices = false
+    @State private var selectedBarberShop: BarberShop? = nil
+    @State private var selectedBarber: Barber? = nil
+    @State private var selectedService: Service? = nil
+    @EnvironmentObject var order: Order
     
     var body: some View {
         ZStack {
@@ -30,7 +34,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingBarbershops) {
-                            BarberShopsView(isPresented: $isShowingBarbershops)
+                            BarberShopsView(isPresented: $isShowingBarbershops, selectedBarberShop: $selectedBarberShop)
                         }
                     }
 
@@ -52,7 +56,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingBarbers) {
-                            BarbersView(isPresented: $isShowingBarbers)
+                            BarbersView(isPresented: $isShowingBarbers, selectedBarber: $selectedBarber)
                         }
                     }
                     
@@ -74,7 +78,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingServices) {
-                            ServicesView(isPresented: $isShowingServices)
+                            ServicesView(isPresented: $isShowingServices, selectedService: $selectedService)
                         }
                     }
                     
@@ -98,7 +102,8 @@ struct HomeView: View {
                 }
                 .padding(.bottom, 180)
                 Button {
-                    //
+                    let orderItem = OrderItem(id: order.items.count+1, service: selectedService ?? MockData.sampleServiceOne, barber: selectedBarber ?? MockData.sampleBarberOne, barberShop: selectedBarberShop ?? MockData.sampleBarberShopOne, data: "14", time: "17:30")
+                    order.items.append(orderItem)
                 } label: {
                     Text("Записаться")
                         .font(.system(size: 22, weight: .medium))
@@ -116,4 +121,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(Order())
 }

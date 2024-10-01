@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderListCell: View {
-    let order: Order
+    let order: OrderItem
     var body: some View {
         VStack (spacing: 5) {
             HStack {

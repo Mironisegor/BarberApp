@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct BarberAppApp: App {
+    var order = Order()
     var body: some Scene {
         WindowGroup {
-            GreetingView()
+            GreetingView().environmentObject(order)
         }
     }
 }

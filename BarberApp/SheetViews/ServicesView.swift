@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ServicesView: View {
     @Binding var isPresented: Bool
+    @Binding var selectedService: Service?
     @State private var selectedServiceIndex: Int? = nil
     
     var body: some View {
@@ -17,8 +18,10 @@ struct ServicesView: View {
                                 set: { newValue in
                                     if newValue {
                                         selectedServiceIndex = index
+                                        selectedService = service
                                     } else {
                                         selectedServiceIndex = nil
+                                        selectedService = nil
                                     }
                                 }
                             ))
@@ -50,5 +53,5 @@ struct ServicesView: View {
 }
 
 #Preview {
-    ServicesView(isPresented: .constant(true))
+    ServicesView(isPresented: .constant(true), selectedService: .constant(nil))
 }
