@@ -6,11 +6,6 @@ struct HomeView: View {
     @State private var isShowingBarbers = false
     @State private var isShowingServices = false
     
-    // Состояния для хранения выбранных значений
-    @State private var selectedBarberShop: BarberShop?
-    @State private var selectedBarber: Barber?
-    @State private var selectedService: Service?
-    
     var body: some View {
         ZStack {
             Color.accentColor
@@ -35,7 +30,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingBarbershops) {
-                            BarberShopsView(selectedBarberShop: $selectedBarberShop)
+                            BarberShopsView(isPresented: $isShowingBarbershops)
                         }
                     }
 
@@ -57,7 +52,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingBarbers) {
-                            BarbersView(selectedBarber: $selectedBarber)
+                            BarbersView(isPresented: $isShowingBarbers)
                         }
                     }
                     
@@ -79,7 +74,7 @@ struct HomeView: View {
                         .foregroundColor(.black)
                         .cornerRadius(13)
                         .sheet(isPresented: $isShowingServices) {
-                            ServicesView()
+                            ServicesView(isPresented: $isShowingServices)
                         }
                     }
                     
@@ -103,29 +98,13 @@ struct HomeView: View {
                 }
                 .padding(.bottom, 180)
                 Button {
-                    // Создаем экземпляр Order и добавляем его в массив MockData.orders
-                    if let barberShop = selectedBarberShop,
-                       let barber = selectedBarber,
-                       let service = selectedService {
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "dd.MM.yyyy"
-                        let timeFormatter = DateFormatter()
-                        timeFormatter.dateFormat = "HH:mm"
-                        
-                        let order = Order(id: MockData.orders.count + 1,
-                                          service: service,
-                                          barber: barber,
-                                          barberShop: barberShop,
-                                          data: dateFormatter.string(from: date),
-                                          time: timeFormatter.string(from: date))
-                        MockData.orders.append(order)
-                    }
+                    //
                 } label: {
                     Text("Записаться")
                         .font(.system(size: 22, weight: .medium))
                         .frame(width: 200, height: 50)
-                        .background(Color.white)
-                        .foregroundColor(.black)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
                         .cornerRadius(10)
                         .padding(.bottom, 50)
                 }

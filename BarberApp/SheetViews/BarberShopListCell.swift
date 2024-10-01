@@ -2,11 +2,11 @@ import SwiftUI
 
 struct BarberShopListCell: View {
     let shop: BarberShop
-    @Binding var isSelected: Bool
+    @Binding var isSelected : Bool
     
     var body: some View {
         Button {
-            isSelected = true
+            //
         } label: {
             HStack {
                 VStack(alignment: .leading, spacing: 8) {

@@ -2,10 +2,7 @@ import SwiftUI
 
 struct BarberShopsView: View {
     let customGrayColor = Color(red: 0.24, green: 0.24, blue: 0.24)
-    @Environment(\.presentationMode) var presentationMode
-    
-    @Binding var selectedBarberShop: BarberShop?
-    @State private var selectedBarberShops: [BarberShop: Bool] = [:]
+    @Binding var isPresented : Bool
     
     var body: some View {
         NavigationView {
@@ -15,17 +12,7 @@ struct BarberShopsView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         ForEach(MockData.barberShops) { shop in
-                            BarberShopListCell(shop: shop, isSelected: Binding(
-                                get: { selectedBarberShops[shop] ?? false },
-                                set: { newValue in
-                                    selectedBarberShops[shop] = newValue
-                                    if newValue {
-                                        selectedBarberShop = shop
-                                    } else {
-                                        selectedBarberShop = nil
-                                    }
-                                }
-                            ))
+                            BarberShopListCell(shop: shop, isSelected: $isPresented)
                             .background(customGrayColor)
                             .padding(.vertical, 8)
                         }
@@ -42,9 +29,9 @@ struct BarberShopsView: View {
                     
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {
-                            presentationMode.wrappedValue.dismiss()
+                            isPresented = false
                         }) {
-                            Image(systemName: "chevron.left")
+                            Image("buttonBack")
                                 .foregroundColor(.white)
                         }
                     }
@@ -56,5 +43,5 @@ struct BarberShopsView: View {
 }
 
 #Preview {
-    BarberShopsView(selectedBarberShop: .constant(nil))
+    BarberShopsView(isPresented: .constant(true))
 }

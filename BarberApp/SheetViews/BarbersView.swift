@@ -2,10 +2,7 @@ import SwiftUI
 
 struct BarbersView: View {
     let customGrayColor = Color(red: 0.24, green: 0.24, blue: 0.24)
-    @Environment(\.presentationMode) var presentationMode
-    
-    @Binding var selectedBarber: Barber?
-    @State private var selectedBarbers: [Barber: Bool] = [:]
+    @Binding var isPresented : Bool
     
     var body: some View {
         NavigationView {
@@ -15,17 +12,7 @@ struct BarbersView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         ForEach(MockData.barbers) { barber in
-                            BarbersListCell(barber: barber, isSelected: Binding(
-                                get: { selectedBarbers[barber] ?? false },
-                                set: { newValue in
-                                    selectedBarbers[barber] = newValue
-                                    if newValue {
-                                        selectedBarber = barber
-                                    } else {
-                                        selectedBarber = nil
-                                    }
-                                }
-                            ))
+                            BarbersListCell(barber: barber, isSelected: $isPresented)
                             .background(customGrayColor)
                             .padding(.vertical, 8)
                         }
@@ -42,9 +29,9 @@ struct BarbersView: View {
                     
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {
-                            presentationMode.wrappedValue.dismiss()
+                            isPresented = false
                         }) {
-                            Image(systemName: "chevron.left")
+                            Image("buttonBack")
                                 .foregroundColor(.white)
                         }
                     }
@@ -56,5 +43,5 @@ struct BarbersView: View {
 }
 
 #Preview {
-    BarbersView(selectedBarber: .constant(nil))
+    BarbersView(isPresented: .constant(true))
 }

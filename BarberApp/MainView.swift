@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    let customDarkGrayColor = Color(red: 29.0 / 255.0, green: 29 / 255.0, blue: 29 / 255.0)
     @State private var selectedTabIndex = 0
     
     let icons = [
@@ -57,7 +58,7 @@ struct MainView: View {
                 }
                 .frame(width: 420, height: 50)
                 .padding(.top, 10)
-                .background(Color.gray)
+                .background(customDarkGrayColor)
                 
             }
         }

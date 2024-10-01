@@ -6,7 +6,7 @@ struct BarbersListCell: View {
     
     var body: some View {
         Button{
-            isSelected = true
+            isSelected.toggle()
         } label: {
             HStack {
                 Image(systemName: barber.image)

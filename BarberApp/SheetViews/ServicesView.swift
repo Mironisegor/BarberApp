@@ -1,22 +1,31 @@
 import SwiftUI
 
 struct ServicesView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State var selectedService: Bool = false
+    @Binding var isPresented: Bool
+    @State private var selectedServiceIndex: Int? = nil
     
     var body: some View {
         NavigationView {
             ZStack {
-                Color.gray.edgesIgnoringSafeArea(.all)
+                Color.accentColor.edgesIgnoringSafeArea(.all)
                 
                 ScrollView {
                     VStack(spacing: 10) {
-                        ForEach(MockData.services) { service in
-                            ServicesListCell(service: service, isSelected: $selectedService)
+                        ForEach(Array(MockData.services.enumerated()), id: \.element.id) { index, service in
+                            ServicesListCell(service: service, isSelected: Binding(
+                                get: { selectedServiceIndex == index },
+                                set: { newValue in
+                                    if newValue {
+                                        selectedServiceIndex = index
+                                    } else {
+                                        selectedServiceIndex = nil
+                                    }
+                                }
+                            ))
                         }
                     }
                 }
-                .background(Color.gray)
+                .background(Color.accentColor)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         Text("Услуги")
@@ -27,9 +36,9 @@ struct ServicesView: View {
                     
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {
-                            presentationMode.wrappedValue.dismiss()
+                            isPresented = false
                         }) {
-                            Image(systemName: "chevron.left")
+                            Image("buttonBack")
                                 .foregroundColor(.white)
                         }
                     }
@@ -41,5 +50,5 @@ struct ServicesView: View {
 }
 
 #Preview {
-    ServicesView()
+    ServicesView(isPresented: .constant(true))
 }
