@@ -78,7 +78,7 @@ struct HomeView: View {
                         }
                     }
                     
-                    DatePicker("Время", selection: $date, in: ...Date())
+                    DatePicker("Время", selection: $date, in: Date()...)
                         .padding()
                         .accentColor(.blue)
                         .font(.system(size: 15, weight: .semibold))
